@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220924152954_InitialMigrations.cs" />
+    <Compile Remove="Migrations\20220924152954_InitialMigrations.Designer.cs" />
+    <Compile Remove="Migrations\20220924154034_InitialMigrations.cs" />
+    <Compile Remove="Migrations\20220924154034_InitialMigrations.Designer.cs" />
+    <Compile Remove="Migrations\20220924154650_InitialMigrations.cs" />
+    <Compile Remove="Migrations\20220924154650_InitialMigrations.Designer.cs" />
+    <Compile Remove="Migrations\20220924160623_InitialMigrations.cs" />
+    <Compile Remove="Migrations\20220924160623_InitialMigrations.Designer.cs" />
+    <Compile Remove="Migrations\20220924162518_InitialMigration.cs" />
+    <Compile Remove="Migrations\20220924162518_InitialMigration.Designer.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.18" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.17" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.18" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.18">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>
