@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace application.BusinessLogic.Get
 {
-    public class GetVModelHandler : IRequestHandler<GetVModelRequest, List<Model>>
+    public class GetVModelHandler : IRequestHandler<GetVModelRequest, List<ModelResponse>>
     {
         private readonly IVerificationRepo _verificationRepo;
         public GetVModelHandler(IVerificationRepo verificcationRepo)
         {
             _verificationRepo = verificcationRepo;
         }
-        public async Task<List<Model>> Handle(GetVModelRequest request, CancellationToken cancellationToken)
+        public async Task<List<ModelResponse>> Handle(GetVModelRequest request, CancellationToken cancellationToken)
         {
             var results = await _verificationRepo.GetAllAsync(request, cancellationToken);
 
-            var response = results.Select(c => new Model
+            var response = results.Select(c => new ModelResponse
             {
                 FirstName = c.FirstName,
                 MiddleName = c.MiddleName,

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace application.BusinessLogic.Post
 {
-    public class PostVModelHandler : IRequestHandler<PostVModelRequest, Model>
+    public class PostVModelHandler : IRequestHandler<PostVModelRequest, ModelResponse>
     {
         private readonly IVerificationRepo _verificationRepo;
 
@@ -15,7 +15,7 @@ namespace application.BusinessLogic.Post
         {
             _verificationRepo = verificationRepo;
         }
-        public async Task<Model> Handle(PostVModelRequest request, CancellationToken cancellationToken)
+        public async Task<ModelResponse> Handle(PostVModelRequest request, CancellationToken cancellationToken)
         {
 
             var vModelToSave = new vModel
@@ -30,12 +30,11 @@ namespace application.BusinessLogic.Post
                 ReferenceId = request.ReferenceId,
                 ProcessedAt = DateTime.Now,
                 CreatedAt = DateTime.Now,
-
             };
 
             await _verificationRepo.PostVerification(vModelToSave, cancellationToken);
 
-            var response = new Model
+            var response = new ModelResponse
             {
                 FirstName = request.FirstName,
                 MiddleName = request.MiddleName,

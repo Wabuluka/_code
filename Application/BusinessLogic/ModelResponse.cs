@@ -3,7 +3,8 @@ using System;
 
 namespace application.BusinessLogic
 {
-    public class Model
+    // Expected Response
+    public class ModelResponse
     {
         public string FirstName { get; set; }
         public string MiddleName { get; set; }

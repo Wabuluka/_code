@@ -1,5 +1,4 @@
-﻿using application.BusinessLogic;
-using application.BusinessLogic.Get;
+﻿using application.BusinessLogic.Get;
 using application.Interfaces;
 using Database;
 using Domain;
@@ -55,7 +54,7 @@ namespace database.Repository
         }
 
         public async Task PostVerification(vModel vModel, CancellationToken cancellationToken)
-        {           
+        {
             await _context.AddAsync(vModel);
 
             await _context.SaveChangesAsync();

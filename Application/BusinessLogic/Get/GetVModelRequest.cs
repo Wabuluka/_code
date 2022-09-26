@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace application.BusinessLogic.Get
 {
-    public class GetVModelRequest : IRequest<List<Model>>
+    public class GetVModelRequest : IRequest<List<ModelResponse>>
     {
         public DateTime? From { get; set; }
         public DateTime? To { get; set; }

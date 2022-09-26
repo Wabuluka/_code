@@ -21,7 +21,7 @@ namespace api.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Model>> PostRequest([FromBody] PostVModelRequest request)
+        public async Task<ActionResult<ModelResponse>> PostRequest([FromBody] PostVModelRequest request)
         {
             var res = await _imediatr.Send(request);
 
@@ -30,7 +30,7 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Model>>> GetAll([FromQuery] GetVModelRequest request)
+        public async Task<ActionResult<List<ModelResponse>>> GetAll([FromQuery] GetVModelRequest request)
         {
             var response = await _imediatr.Send(request);
 

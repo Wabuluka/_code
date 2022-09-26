@@ -2,6 +2,7 @@
 
 namespace Domain
 {
+    // Defines Database table fields
     public class vModel
     {
         public Guid Id { get; set; }

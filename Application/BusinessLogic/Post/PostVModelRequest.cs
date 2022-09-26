@@ -3,7 +3,8 @@ using MediatR;
 
 namespace application.BusinessLogic.Post
 {
-    public class PostVModelRequest : IRequest<Model>
+    // Required fields in POST
+    public class PostVModelRequest : IRequest<ModelResponse>
     {
         public string ReferenceId { get; set; }
         public string NIN { get; set; }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Database
 {
+    // Creates Domain Entity in DB
     public class ApplicationDbContext : DbContext
     {
         public DbSet<vModel> vModels { get; set; }
@@ -13,8 +14,10 @@ namespace Database
 
         }
 
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // To convert enum to string
             modelBuilder.Entity<vModel>()
                 .Property(x => x.Gender)
                 .HasConversion(new EnumToStringConverter<Gender>());

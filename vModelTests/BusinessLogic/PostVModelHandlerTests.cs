@@ -15,7 +15,7 @@ namespace vModelTests.BusinessLogic
         private readonly Mock<IVerificationRepo> _commandRepository;
         private readonly PostVModelHandler _handler;
         private readonly PostVModelRequest _request;
-        private readonly Model _model;
+        private readonly ModelResponse _model;
 
         public PostVModelHandlerTests()
         {
@@ -36,7 +36,7 @@ namespace vModelTests.BusinessLogic
 
             };
 
-            _model = new Model
+            _model = new ModelResponse
             {
                 ReferenceId = _request.ReferenceId,
                 NIN = _request.NIN,
